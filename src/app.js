@@ -1,13 +1,17 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Header = require('./header.js')
 
 var Hello = React.createClass({
   render: function() {
-    return <div> <h1 className="red">
-      Hello!
-    </h1>
-    <Header />
+    return <div>
+
+    <div className="ui secondary menu">
+      <a className="active item">Home</a>
+      <a className="item">Calendar</a>
+      <a className="item">Annoucements</a>
+      <a className="item">Committees</a>
+    </div>
+
     </div>
   }
 });
