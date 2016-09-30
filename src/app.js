@@ -1,6 +1,10 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Navbar = require('./navbar.js');
+var HomePage = require('./home.js');
+var CalendarPage = require('./calendar.js');
+var AnnoucementsPage = require('./annoucements.js');
+var CommitteesPage = require('./committees.js');
 
 var Hello = React.createClass({
 
@@ -21,7 +25,15 @@ var Hello = React.createClass({
         PCalendar={this.state.Calendar}
         PAnnoucements={this.state.Annoucements}
         PCommittees={this.state.Committees} />
+
+        {this.state.Home ? <HomePage /> : null }
+        {this.state.Calendar ? <CalendarPage /> : null }
+        {this.state.Annoucements? <AnnoucementsPage />: null }
+        {this.state.Committees ? <CommitteesPage />: null }
+
     </div>
+
+
   },
 
   handleChildClick: function(tab) {
