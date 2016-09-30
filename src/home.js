@@ -17,7 +17,7 @@ var HomePage = React.createClass ({
       </div>
 
       <div className="row centered logo">
-        <p className="ui inverted segment" style={{fontSize: '2em'}}>This is the TDP program. Welcome to the site and have a look around.</p>
+        <p className="ui segment" style={{fontSize: '2em'}}>This is the TDP program. Welcome to the site and have a look around.</p>
       </div>
       </div>
   }
