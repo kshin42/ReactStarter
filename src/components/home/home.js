@@ -13,7 +13,7 @@ var HomePage = React.createClass ({
       <div className="row" style={{padding: '3em'}}></div>
 
       <div className="row centered logo">
-        <img className="ui image" src="src/C1Logo.png"></img>
+        <img className="ui image" src="src/images/C1Logo.png"></img>
       </div>
 
       <div className="row centered logo">

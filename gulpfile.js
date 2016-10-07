@@ -30,11 +30,11 @@ var notify = function(error) {
   }
 
   notifier.notify({title: title, message: message});
-  console.log(error.message);
+  console.log(error);
 };
 
 var bundler = watchify(browserify({
-  entries: ['./src/app.js'],
+  entries: ['./src/components/app.js'],
   transform: [reactify],
   extensions: ['.js'],
   debug: true,
@@ -47,8 +47,8 @@ function bundle() {
   return bundler
     .bundle()
     .on('error', notify)
-    .pipe(source('main.js'))
-    .pipe(gulp.dest('./'))
+    .pipe(source('./main.js'))
+    .pipe(gulp.dest('./dist'))
 }
 bundler.on('update', bundle);
 
@@ -66,6 +66,8 @@ gulp.task('serve', function(done) {
             cb(true)
           } else if(/style.css/.test(filePath)){
             cb(true)
+          } else if (/index.html/.test(filePath)) {
+            cb(true)
           }
         }
       },
@@ -73,15 +75,15 @@ gulp.task('serve', function(done) {
     }));
 });
 
-gulp.task('sass', function () {
-  gulp.src('./styles/sass/**/*.scss')
+gulp.task('css', function () {
+  gulp.src('./styles/css/*.css')
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('style.css'))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('default', ['build', 'serve', 'sass', 'watch']);
+gulp.task('default', ['build', 'serve', 'css', 'watch']);
 
 gulp.task('watch', function () {
-  gulp.watch('./styles/sass/**/*.scss', ['sass']);
+  gulp.watch('./styles/css/*.css', ['css']);
 });

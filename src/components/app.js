@@ -1,10 +1,10 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Navbar = require('./navbar.js');
-var HomePage = require('./home.js');
-var CalendarPage = require('./calendar.js');
-var AnnoucementsPage = require('./annoucements.js');
-var CommitteesPage = require('./committees.js');
+var Navbar = require('./common/navbar.js');
+var HomePage = require('./home/home.js');
+var CalendarPage = require('./calendar/calendar.js');
+var AnnoucementsPage = require('./annoucements/annoucements.js');
+var CommitteesPage = require('./committees/committees.js');
 
 var Hello = React.createClass({
 
